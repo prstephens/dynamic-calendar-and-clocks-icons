@@ -326,7 +326,7 @@ function repaintCalendar(icon) {
         offset = 2
     }
     datePos = showWeekday || showMonth ? datePos : dateOnlyPos;
-    context.moveTo(dateX, iconSize / 96 * datePos);
+    context.moveTo(dateX - offset, iconSize / 96 * datePos);
     context.showText(date);
     context.$dispose();
 }
