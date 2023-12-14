@@ -321,6 +321,10 @@ function repaintCalendar(icon) {
     context.selectFontFace(dateFont, 0, dateBold);
     context.setFontSize(iconSize / 96 * dateSize);
     let dateX = (iconSize - context.textExtents(date).width) / 2;
+    let offset = 0
+    if (date.startsWith("1")) {
+        offset = 2
+    }
     datePos = showWeekday || showMonth ? datePos : dateOnlyPos;
     context.moveTo(dateX, iconSize / 96 * datePos);
     context.showText(date);
